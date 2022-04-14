@@ -4,11 +4,9 @@ import { StyledAdvantage } from "./Advantage.style";
 const Advantage = ({ number, title, description }) => {
 	return (
 		<StyledAdvantage>
-			<div className="advantage__title-bar">
-				<div className="advantage__number">{number}</div>
-				<h1 className="advantage__title">{title}</h1>
-			</div>
-			<h1 className="advantage__description">{description}</h1>
+			<span>{number}</span>
+			<h1>{title}</h1>
+			<h2>{description}</h2>
 		</StyledAdvantage>
 	);
 };
