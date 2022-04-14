@@ -9,13 +9,34 @@ export const StyledGetStarted = styled.div`
 	background-repeat: no-repeat;
 	text-align: center;
 
-	padding: 6rem 2rem;
+	padding: 6rem 0;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+	}
 
 	h1 {
 		font-size: 2.3rem;
 		text-align: center;
 		color: white;
+	}
 
-		margin-bottom: 1.5rem;
+	@media (min-width: 1024px) {
+		padding: 4rem 0;
+
+		background-image: url(${desktopBg});
+		background-position: center;
+
+		.wrapper {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		h1 {
+			text-align: left;
+		}
 	}
 `;
