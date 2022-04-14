@@ -3,7 +3,8 @@ import styled, { css } from "styled-components";
 export const StyledNavbar = styled.nav`
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 2;
 
 	display: flex;
@@ -11,7 +12,9 @@ export const StyledNavbar = styled.nav`
 	align-items: center;
 
 	width: calc(100%);
-	padding: 2.5rem 1.5rem;
+	max-width: 1100px;
+
+	padding: 2.5rem 1rem;
 
 	ul {
 		background: white;
@@ -34,14 +37,40 @@ export const StyledNavbar = styled.nav`
 		width: calc(100% - 3rem);
 		border-radius: 5px;
 		text-align: center;
-	}
 
-	ul li {
-		color: var(--dark-blue);
-		font-weight: 700;
+		a {
+			color: var(--dark-blue);
+			font-weight: 700;
+
+			&:hover {
+				color: var(--gray-blue);
+			}
+		}
 	}
 
 	.get-started-btn {
 		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.menu-btn {
+			display: none;
+		}
+
+		.get-started-btn {
+			display: block;
+		}
+
+		ul {
+			all: unset;
+			list-style: none;
+			display: flex;
+			gap: 2rem;
+
+			a {
+				font-size: 0.8rem;
+				font-weight: 500;
+			}
+		}
 	}
 `;
