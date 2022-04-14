@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import { Navbar, Hero, About, GetStarted, Footer } from "./components";
-import { GlobalStyles, Wrapper, Mask, StyledApp } from "./App.styles";
+import {
+	Navbar,
+	Hero,
+	About,
+	GetStarted,
+	Footer,
+	Testimonials,
+} from "./components";
+import { GlobalStyles, Mask, StyledApp } from "./App.style";
 
 const App = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -8,10 +15,11 @@ const App = () => {
 		<StyledApp>
 			<GlobalStyles open={menuOpen} />
 			<Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-			<Wrapper>
-				<Hero />
-				<About />
-			</Wrapper>
+
+			<Hero />
+			<About />
+
+			<Testimonials />
 			<GetStarted />
 			<Footer />
 			<Mask open={menuOpen} />
