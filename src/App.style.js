@@ -2,8 +2,6 @@ import styled, { createGlobalStyle, css } from "styled-components";
 import mobileBg from "./assets/bg-tablet-pattern.svg";
 
 export const GlobalStyles = createGlobalStyle`
-
-
     :root {
         --primary: hsl(12, 88%, 59%);
         --secondary: hsl(228, 39%, 23%);
@@ -61,12 +59,10 @@ export const StyledApp = styled.div`
 	background-image: url(${mobileBg});
 	background-repeat: no-repeat;
 	background-position: 12vw -12vw;
-	background-size: contain;
+	background-size: 500px;
 `;
 
 export const Wrapper = styled.div`
-	position: relative;
-
 	max-width: 1100px;
 	margin: auto;
 	padding: 0 1rem;
@@ -91,4 +87,39 @@ export const Mask = styled.div`
 		rgba(29, 30, 37, 1) 0%,
 		rgba(250, 250, 250, 0.0997624703087886) 100%
 	);
+`;
+
+export const Button = styled.button`
+	padding: 0.7rem 1.9rem;
+	border-radius: 100px;
+	color: white;
+	background: var(--primary);
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	${(props) =>
+		props.shadow &&
+		css`
+			-webkit-box-shadow: 0px 10px 19px -9px var(--primary);
+			-moz-box-shadow: 0px 10px 19px -9px var(--primary);
+			box-shadow: 0px 10px 19px -9px var(--primary);
+		`}
+
+	${(props) =>
+		props.white &&
+		css`
+			font-weight: 700;
+			color: var(--primary);
+			background: var(--light-gray);
+
+			${(props) =>
+				props.shadow &&
+				css`
+					-webkit-box-shadow: 0px 10px 19px -9px var(--dark-blue);
+					-moz-box-shadow: 0px 10px 19px -9px var(--dark-blue);
+					box-shadow: 0px 10px 19px -9px var(--dark-blue);
+				`}
+		`}
 `;
