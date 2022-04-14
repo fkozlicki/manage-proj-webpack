@@ -1,41 +1,60 @@
 import styled from "styled-components";
 
 export const StyledAdvantage = styled.div`
-	position: relative;
-	overflow-x: hidden;
+	display: grid;
+	grid-template-columns: min-content auto;
+	align-items: center;
+	row-gap: 1rem;
+	column-gap: 1rem;
 
-	.advantage__title-bar {
-		position: absolute;
-		width: 120%;
-		top: 0;
-		right: -20%;
+	margin-bottom: 2rem;
 
-		display: flex;
-		align-items: center;
-		gap: 1rem;
+	span {
+		position: relative;
+		z-index: 3;
 
-		background: var(--pale-red);
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 20px;
-	}
-
-	.advantage__number {
-		padding: 0.575rem 1.6rem;
+		padding: 0.575rem 1.5rem;
 		color: white;
 		font-weight: 700;
 		border-radius: 20px;
 		background: var(--primary);
 	}
 
-	.advantage__title {
+	h1 {
+		position: relative;
 		font-size: 0.95rem;
+		z-index: 2;
+
+		&:before {
+			content: "";
+			width: calc(100% + 3rem);
+			height: 100%;
+			padding: 0.575rem 0;
+
+			background: var(--pale-red);
+			position: absolute;
+			top: -0.575rem;
+			left: -2rem;
+			z-index: -2;
+		}
 	}
-	.advantage__description {
+	h2 {
 		font-size: 0.875rem;
 		line-height: 2;
 		color: var(--gray-blue);
 		font-weight: 400;
 
-		padding: 3rem 0;
+		grid-column: 1 / span 2;
+	}
+
+	@media (min-width: 768px) {
+		h1 {
+			&:before {
+				display: none;
+			}
+		}
+		h2 {
+			grid-column: 2;
+		}
 	}
 `;
